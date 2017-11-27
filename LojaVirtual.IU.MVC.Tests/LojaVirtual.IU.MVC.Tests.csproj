@@ -98,6 +98,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LojaVirtual.IU.MVC\LojaVirtual.IU.MVC.csproj">
+      <Project>{AAE1933D-5FE7-4C5E-8913-3D2E4576D93B}</Project>
+      <Name>LojaVirtual.IU.MVC</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

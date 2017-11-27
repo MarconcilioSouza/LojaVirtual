@@ -45,10 +45,13 @@
     <Compile Include="Entidades\DetalhesPedido.cs" />
     <Compile Include="Entidades\Pedidos.cs" />
     <Compile Include="Entidades\Produtos.cs" />
+    <Compile Include="Interfaces\IRepositorioCategoria.cs" />
+    <Compile Include="Interfaces\Repositorios\IRepositorioCliente.cs" />
+    <Compile Include="Interfaces\Repositorios\IRepositorioProdutos.cs" />
+    <Compile Include="Interfaces\Repositorios\RepositorioBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Servicos\" />
     <Folder Include="Validadores\" />
   </ItemGroup>
