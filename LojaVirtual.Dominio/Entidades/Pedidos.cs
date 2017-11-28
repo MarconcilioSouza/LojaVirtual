@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CarrinhoDeCompras.Domain.Entidades
+namespace LojaVirtual.Dominio.Entidades
 {
     public partial class Pedidos 
     {

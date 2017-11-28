@@ -1,5 +1,5 @@
 ﻿
-using CarrinhoDeCompras.Domain.Entidades;
+using LojaVirtual.Dominio.Entidades;
 
 namespace LojaVirtual.Dominio.Interfaces.Repositorios
 {

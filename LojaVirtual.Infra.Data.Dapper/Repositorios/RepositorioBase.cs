@@ -10,27 +10,11 @@ namespace LojaVirtual.Infra.Data.Dapper.Repositorios
 {
     public class RepositorioBase<TEntity> : LojaVirtualSqlConnection, IRepositorioBase<TEntity>, IDisposable where TEntity : class
     {
-        public void Add(TEntity entity)
+        public void Add(TEntity obj)
         {
             using (var conn = SqlConnectionDapper)
             {
-                conn.Insert<TEntity>(entity);
-            }
-        }
-
-        public IEnumerable<TEntity> All()
-        {
-            using (var conn = SqlConnectionDapper)
-            {
-                return conn.GetAll<TEntity>().ToList();
-            }
-        }
-
-        public void Delete(TEntity entity)
-        {
-            using (var conn = SqlConnectionDapper)
-            {
-                conn.Delete<TEntity>(entity);
+                conn.Insert<TEntity>(obj);
             }
         }
 
@@ -39,7 +23,14 @@ namespace LojaVirtual.Infra.Data.Dapper.Repositorios
             throw new NotImplementedException();
         }
 
-        public TEntity Get(int id)
+        public IEnumerable<TEntity> GetAll()
+        {
+            using (var conn = SqlConnectionDapper)
+            {
+                return conn.GetAll<TEntity>().ToList();
+            }
+        }
+        public TEntity GetById(int id)
         {
             using (var conn = SqlConnectionDapper)
             {
@@ -47,17 +38,29 @@ namespace LojaVirtual.Infra.Data.Dapper.Repositorios
             }
         }
 
-        public void Update(TEntity entity)
+        public void Remove(int id)
         {
+            var entity = GetById(id);
             using (var conn = SqlConnectionDapper)
             {
-                conn.Update<TEntity>(entity);
+                conn.Delete<TEntity>(entity);
             }
         }
 
-        public void Dispose()
+        public void Remove(TEntity obj)
         {
-            GC.SuppressFinalize(this);
+            using (var conn = SqlConnectionDapper)
+            {
+                conn.Delete<TEntity>(obj);
+            }
+        }
+
+        public void Update(TEntity obj)
+        {
+            using (var conn = SqlConnectionDapper)
+            {
+                conn.Update<TEntity>(obj);
+            }
         }
     }
 }

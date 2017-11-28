@@ -2,7 +2,7 @@
 
 namespace LojaVirtual.Dominio.Interfaces.Repositorios
 {
-    public interface IRepositorioProdutos : IRepositorioBase<Produtos>
+    public interface IRepositorioCategorias : IRepositorioBase<Categorias>
     {
     }
 }
