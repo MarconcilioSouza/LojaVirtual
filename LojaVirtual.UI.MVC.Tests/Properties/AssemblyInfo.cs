@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LojaVirtual.IU.MVC.Tests")]
+[assembly: AssemblyTitle("LojaVirtual.UI.MVC.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("LojaVirtual.IU.MVC.Tests")]
+[assembly: AssemblyProduct("LojaVirtual.UI.MVC.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("eb05321c-9b09-4628-9cd2-a9c70ff2c116")]
+[assembly: Guid("d585a998-15c5-413e-a291-c8699fc03474")]
 
 // Version information for an assembly consists of the following four values:
 //

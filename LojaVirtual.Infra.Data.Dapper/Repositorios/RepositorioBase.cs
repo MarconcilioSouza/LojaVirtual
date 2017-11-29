@@ -1,4 +1,5 @@
 ﻿using Dapper.Contrib.Extensions;
+using LojaVirtual.Dominio.Entidades;
 using LojaVirtual.Dominio.Interfaces.Repositorios;
 using LojaVirtual.Infra.Data.Dapper.Common;
 using System;
@@ -8,11 +9,11 @@ using System.Linq.Expressions;
 
 namespace LojaVirtual.Infra.Data.Dapper.Repositorios
 {
-    public class RepositorioBase<TEntity> : LojaVirtualSqlConnection, IRepositorioBase<TEntity>, IDisposable where TEntity : class
+    public class RepositorioBase<TEntity> : SqlConnectionBase, IRepositorioBase<TEntity>, IDisposable where TEntity : class
     {
         public void Add(TEntity obj)
         {
-            using (var conn = SqlConnectionDapper)
+            using (var conn = CreateConnection)
             {
                 conn.Insert<TEntity>(obj);
             }
@@ -25,14 +26,14 @@ namespace LojaVirtual.Infra.Data.Dapper.Repositorios
 
         public IEnumerable<TEntity> GetAll()
         {
-            using (var conn = SqlConnectionDapper)
+            using (var conn = CreateConnection)
             {
                 return conn.GetAll<TEntity>().ToList();
             }
         }
         public TEntity GetById(int id)
         {
-            using (var conn = SqlConnectionDapper)
+            using (var conn = CreateConnection)
             {
                 return conn.Get<TEntity>(id);
             }
@@ -41,7 +42,7 @@ namespace LojaVirtual.Infra.Data.Dapper.Repositorios
         public void Remove(int id)
         {
             var entity = GetById(id);
-            using (var conn = SqlConnectionDapper)
+            using (var conn = CreateConnection)
             {
                 conn.Delete<TEntity>(entity);
             }
@@ -49,7 +50,7 @@ namespace LojaVirtual.Infra.Data.Dapper.Repositorios
 
         public void Remove(TEntity obj)
         {
-            using (var conn = SqlConnectionDapper)
+            using (var conn = CreateConnection)
             {
                 conn.Delete<TEntity>(obj);
             }
@@ -57,7 +58,7 @@ namespace LojaVirtual.Infra.Data.Dapper.Repositorios
 
         public void Update(TEntity obj)
         {
-            using (var conn = SqlConnectionDapper)
+            using (var conn = CreateConnection)
             {
                 conn.Update<TEntity>(obj);
             }

@@ -1,8 +1,9 @@
 ﻿using LojaVirtual.Aplicacao.Interfaces;
-using System.Web.Mvc;
+using LojaVirtual.Aplicacao.ViewModels;
 using System;
+using System.Web.Mvc;
 
-namespace LojaVirtual.IU.MVC.Controllers
+namespace LojaVirtual.UI.MVC.Controllers
 {
     public class CategoriasController : Controller
     {
@@ -33,15 +34,18 @@ namespace LojaVirtual.IU.MVC.Controllers
 
         // POST: Categorias/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(CategoriasViewModel categoria,FormCollection collection)
         {
             try
             {
-                // TODO: Add insert logic here
+                if (ModelState.IsValid)
+                {
+                    appServiceCategorias.Register(categoria);
+                }
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception ex)
             {
                 return View();
             }

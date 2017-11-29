@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LojaVirtual.IU.MVC.Controllers
+namespace LojaVirtual.UI.MVC.Controllers
 {
     public class HomeController : Controller
     {

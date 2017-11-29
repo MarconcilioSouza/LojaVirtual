@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace LojaVirtual.IU.MVC
+namespace LojaVirtual.UI.MVC
 {
     public class FilterConfig
     {

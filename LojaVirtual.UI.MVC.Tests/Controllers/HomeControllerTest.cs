@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LojaVirtual.IU.MVC;
-using LojaVirtual.IU.MVC.Controllers;
+using LojaVirtual.UI.MVC;
+using LojaVirtual.UI.MVC.Controllers;
 
-namespace LojaVirtual.IU.MVC.Tests.Controllers
+namespace LojaVirtual.UI.MVC.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest
