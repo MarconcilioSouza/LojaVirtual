@@ -13,6 +13,6 @@ namespace LojaVirtual.Aplicacao.Interfaces
         void Update(CategoriasViewModel customerViewModel);
         void Remove(int id);
         void Remove(CategoriasViewModel id);
-       // IEnumerable<CategoriasViewModel> Find(Expression<Func<CategoriasViewModel, bool>> predicate);
+        //IEnumerable<CategoriasViewModel> Find(Expression<Func<CategoriasViewModel, bool>> predicate);
     }
 }

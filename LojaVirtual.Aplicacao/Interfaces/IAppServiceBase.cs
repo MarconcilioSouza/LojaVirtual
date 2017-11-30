@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace LojaVirtual.Aplicacao.Interfaces
 {
@@ -11,5 +13,6 @@ namespace LojaVirtual.Aplicacao.Interfaces
         void Remove(int id);
         void Remove(TEntity obj);
         void Dispose();
+        //IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
     }
 }

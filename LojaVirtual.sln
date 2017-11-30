@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaVirtual.UI.MVC", "LojaV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaVirtual.UI.MVC.Tests", "LojaVirtual.UI.MVC.Tests\LojaVirtual.UI.MVC.Tests.csproj", "{36D4856A-7FC7-4681-A9E3-B8DBBF4DCA4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaVirtual.Infra.Data.EF", "LojaVirtual.Infra.Data.EF\LojaVirtual.Infra.Data.EF.csproj", "{DFF130CA-CEB7-48E3-9963-1FDD05A69757}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{36D4856A-7FC7-4681-A9E3-B8DBBF4DCA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36D4856A-7FC7-4681-A9E3-B8DBBF4DCA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36D4856A-7FC7-4681-A9E3-B8DBBF4DCA4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFF130CA-CEB7-48E3-9963-1FDD05A69757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFF130CA-CEB7-48E3-9963-1FDD05A69757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFF130CA-CEB7-48E3-9963-1FDD05A69757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFF130CA-CEB7-48E3-9963-1FDD05A69757}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{CB32C7D7-0E57-4069-9AB3-F338CB930612} = {0E9A3C2B-3D23-4EFF-A1C8-687D78ED838A}
 		{82680C3B-D41E-4AB4-BF4F-F93B1D83663C} = {3EA81084-A0CC-456A-B5B7-A5F5AA126B1B}
 		{36D4856A-7FC7-4681-A9E3-B8DBBF4DCA4C} = {3EA81084-A0CC-456A-B5B7-A5F5AA126B1B}
+		{DFF130CA-CEB7-48E3-9963-1FDD05A69757} = {0E9A3C2B-3D23-4EFF-A1C8-687D78ED838A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F66E957-14FF-4FE1-9B46-8CEEB421700D}

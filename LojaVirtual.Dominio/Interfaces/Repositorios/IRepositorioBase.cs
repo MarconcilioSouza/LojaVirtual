@@ -13,6 +13,6 @@ namespace LojaVirtual.Dominio.Interfaces.Repositorios
         void Remove(int id);
         void Remove(TEntity obj);
         void Dispose();
-        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
+        //IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
+﻿using System.Collections.Generic;
 using LojaVirtual.Dominio.Entidades;
 using LojaVirtual.Dominio.Interfaces.Repositorios;
 using LojaVirtual.Infra.Data.Dapper.Common;
@@ -14,7 +12,9 @@ namespace LojaVirtual.Infra.Data.Dapper.Repositorios
         {
             using (var conn = CreateConnection)
             {
-                string sqlQuery = "INSERT INTO[dbo].[Categorias]([NomeCategoria],[Descricao],[Imagem]) VALUES(@NomeCategoria, @Descricao, @Imagem)";
+                string sqlQuery = "INSERT INTO[dbo].[Categorias]([NomeCategoria],[Descricao],[Imagem]) " +
+                    "VALUES(@NomeCategoria, @Descricao, @Imagem)";
+
                 conn.Execute(sqlQuery,
                     new
                     {
@@ -23,11 +23,6 @@ namespace LojaVirtual.Infra.Data.Dapper.Repositorios
                         Imagem = categoria.Imagem,
                     });
             }
-        }
-
-        public IEnumerable<Categorias> Find(Expression<Func<Categorias, bool>> predicate)
-        {
-            throw new NotImplementedException();
         }
 
         public IEnumerable<Categorias> GetAll()
@@ -40,22 +35,40 @@ namespace LojaVirtual.Infra.Data.Dapper.Repositorios
 
         public Categorias GetById(int id)
         {
-            throw new NotImplementedException();
+            using (var conn = CreateConnection)
+            {
+                return conn.QueryFirstOrDefault<Categorias>("Select * from Categorias where IdCategoria = @IdCategoria", new { IdCategoria = id });
+            }
         }
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            var categoria = GetById(id);
+            Remove(categoria);
         }
 
         public void Remove(Categorias obj)
         {
-            throw new NotImplementedException();
+            using (var conn = CreateConnection)
+            {
+                conn.Execute("Delete from Categorias where IdCategoria = @IdCategoria", new { IdCategoria = obj.IdCategoria });
+            }
         }
 
         public void Update(Categorias obj)
         {
-            throw new NotImplementedException();
+            using (var conn = CreateConnection)
+            {
+                conn.Execute("Update Categorias set NomeCategoria = @NomeCategoria, " +
+                    " Descricao = @Descricao, Imagem = @Imagem where IdCategoria = @IdCategoria",
+                            new
+                            {
+                                IdCategoria = obj.IdCategoria,
+                                NomeCategoria = obj.NomeCategoria,
+                                Descricao = obj.Descricao,
+                                Imagem = obj.Imagem,
+                            });
+            }
         }
     }
 }

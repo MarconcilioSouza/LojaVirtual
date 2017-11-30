@@ -1,6 +1,5 @@
 ﻿using LojaVirtual.Aplicacao.Interfaces;
 using LojaVirtual.Aplicacao.ViewModels;
-using System;
 using System.Web.Mvc;
 
 namespace LojaVirtual.UI.MVC.Controllers
@@ -34,65 +33,55 @@ namespace LojaVirtual.UI.MVC.Controllers
 
         // POST: Categorias/Create
         [HttpPost]
-        public ActionResult Create(CategoriasViewModel categoria,FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(CategoriasViewModel categoria, FormCollection collection)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    appServiceCategorias.Register(categoria);
-                }
-
+                appServiceCategorias.Register(categoria);
                 return RedirectToAction("Index");
+
             }
-            catch(Exception ex)
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: Categorias/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var categoria = appServiceCategorias.GetById(id);
+            return View(categoria);
         }
 
         // POST: Categorias/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CategoriasViewModel categoria)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                appServiceCategorias.Update(categoria);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(categoria);
         }
 
         // GET: Categorias/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var categoria = appServiceCategorias.GetById(id);
+            return View(categoria);
         }
 
         // POST: Categorias/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, CategoriasViewModel categoria)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add delete logic here
-
+                appServiceCategorias.Remove(categoria);
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(categoria);
         }
     }
 }

@@ -6,6 +6,7 @@ using LojaVirtual.Aplicacao.ViewModels;
 using LojaVirtual.Aplicacao.AutoMapper;
 using LojaVirtual.Dominio.Interfaces.Services;
 using LojaVirtual.Dominio.Entidades;
+using System.Linq.Expressions;
 
 namespace LojaVirtual.Aplicacao.Services
 {
@@ -56,6 +57,6 @@ namespace LojaVirtual.Aplicacao.Services
         public void Dispose()
         {
             GC.SuppressFinalize(this);
-        }        
+        }
     }
 }
