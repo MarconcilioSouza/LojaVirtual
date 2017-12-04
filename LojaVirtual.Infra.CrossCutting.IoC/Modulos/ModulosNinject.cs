@@ -4,7 +4,8 @@ using LojaVirtual.Aplicacao.Services;
 using LojaVirtual.Dominio.Interfaces.Repositorios;
 using LojaVirtual.Dominio.Interfaces.Services;
 using LojaVirtual.Dominio.Services;
-using LojaVirtual.Infra.Data.Dapper.Repositorios;
+using ProjetoModelo.Infra.Data.EF.Repositorios;
+using LojaVirtual.Infra.Data.EF.Repositorios;
 
 namespace LojaVirtual.Infra.CrossCutting.IoC.Modulos
 {

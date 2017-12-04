@@ -1,4 +1,6 @@
-﻿namespace LojaVirtual.Dominio.Entidades
+﻿using System.Collections.Generic;
+
+namespace LojaVirtual.Dominio.Entidades
 {
     public partial class Categorias
     {
@@ -9,5 +11,7 @@
         public string NomeCategoria { get; set; }
         public string Descricao { get; set; }
         public byte[] Imagem { get; set; }
+
+        public virtual ICollection<Produtos> Produtos { get; set; }
     }
 }

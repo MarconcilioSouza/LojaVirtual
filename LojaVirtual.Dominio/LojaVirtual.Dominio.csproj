@@ -43,6 +43,7 @@
     <Compile Include="Entidades\Categorias.cs" />
     <Compile Include="Entidades\Clientes.cs" />
     <Compile Include="Entidades\DetalhesPedido.cs" />
+    <Compile Include="Entidades\Fornecedores.cs" />
     <Compile Include="Entidades\Pedidos.cs" />
     <Compile Include="Entidades\Produtos.cs" />
     <Compile Include="Interfaces\Repositorios\IRepositorioBase.cs" />

@@ -60,6 +60,10 @@
       <Project>{a2248189-21e4-4c98-9adf-6bb18e15fe1a}</Project>
       <Name>LojaVirtual.Dominio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LojaVirtual.Infra.Data.EF\LojaVirtual.Infra.Data.EF.csproj">
+      <Project>{dff130ca-ceb7-48e3-9963-1fdd05a69757}</Project>
+      <Name>LojaVirtual.Infra.Data.EF</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

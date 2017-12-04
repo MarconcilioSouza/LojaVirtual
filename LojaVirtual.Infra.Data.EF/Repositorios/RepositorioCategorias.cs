@@ -2,41 +2,52 @@
 using LojaVirtual.Dominio.Entidades;
 using LojaVirtual.Dominio.Interfaces.Repositorios;
 using LojaVirtual.Infra.Data.EF.Common;
+using System.Linq;
+using System;
+using System.Data.Entity;
 
 namespace LojaVirtual.Infra.Data.EF.Repositorios
 {
-    public class RepositorioCategorias : LojaVirtualContext, IRepositorioCategorias
+    public class RepositorioCategorias : IDisposable, IRepositorioCategorias
     {
-        private LojaVirtualContext ctx = new LojaVirtualContext();
-
+        LojaVirtualContext ctx = new LojaVirtualContext();
         public void Add(Categorias obj)
         {
             ctx.Categorias.Add(obj);
+            ctx.SaveChanges();
         }
 
         public IEnumerable<Categorias> GetAll()
         {
-            throw new System.NotImplementedException();
+            return ctx.Categorias.ToList();
         }
 
         public Categorias GetById(int id)
         {
-            throw new System.NotImplementedException();
+            return ctx.Categorias.Find(id);
         }
 
         public void Remove(int id)
         {
-            throw new System.NotImplementedException();
+            var categoria = ctx.Categorias.Find(id);
+            Remove(categoria);
         }
 
         public void Remove(Categorias obj)
         {
-            throw new System.NotImplementedException();
+            ctx.Categorias.Remove(obj);
+            ctx.SaveChanges();
         }
 
         public void Update(Categorias obj)
         {
-            throw new System.NotImplementedException();
+            ctx.Entry(obj).State = EntityState.Modified;
+            ctx.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            ctx.Dispose();
         }
     }
 }

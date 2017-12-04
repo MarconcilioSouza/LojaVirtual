@@ -11,10 +11,11 @@ namespace LojaVirtual.Infra.Data.EF.Common
         public LojaVirtualContext() :
             base("LojaVirtual")
         {
-
         }
 
         public DbSet<Categorias> Categorias { get; set; }
+        public DbSet<Produtos> Produtos { get; set; }
+        public DbSet<Fornecedores> Fornecedores { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -28,6 +29,8 @@ namespace LojaVirtual.Infra.Data.EF.Common
             modelBuilder.Properties<DateTime>().Configure(p => p.HasColumnType("datetime"));
 
             modelBuilder.Configurations.Add(new CategoriasConfiguration());
+            modelBuilder.Configurations.Add(new ProdutosConfiguration());
+            modelBuilder.Configurations.Add(new FornecedoresConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }

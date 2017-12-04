@@ -14,5 +14,8 @@
         public decimal? ValorUnitario { get; set; }
         public int? UnidadeEmEstoque { get; set; }
         public int? InidadeSobEncomenda { get; set; }
+
+        public virtual Categorias Categoria { get; set; }
+        public virtual Fornecedores Fornecedor { get; set; }
     }
 }

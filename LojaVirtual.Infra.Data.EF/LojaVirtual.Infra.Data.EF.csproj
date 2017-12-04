@@ -50,6 +50,13 @@
   <ItemGroup>
     <Compile Include="Contexto\LojaVirtualContext.cs" />
     <Compile Include="EntityConfig\CategoriasConfiguration.cs" />
+    <Compile Include="EntityConfig\FornecedoresConfiguration.cs" />
+    <Compile Include="EntityConfig\ProdutosConfiguration.cs" />
+    <Compile Include="Migrations\201712041742184_LojaVirtual_V0.cs" />
+    <Compile Include="Migrations\201712041742184_LojaVirtual_V0.Designer.cs">
+      <DependentUpon>201712041742184_LojaVirtual_V0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\RepositorioBase.cs" />
     <Compile Include="Repositorios\RepositorioCategorias.cs" />
@@ -63,6 +70,11 @@
       <Project>{a2248189-21e4-4c98-9adf-6bb18e15fe1a}</Project>
       <Name>LojaVirtual.Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712041742184_LojaVirtual_V0.resx">
+      <DependentUpon>201712041742184_LojaVirtual_V0.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
