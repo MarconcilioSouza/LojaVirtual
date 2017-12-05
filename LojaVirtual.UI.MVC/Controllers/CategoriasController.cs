@@ -22,7 +22,8 @@ namespace LojaVirtual.UI.MVC.Controllers
         // GET: Categorias/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var categoria = appServiceCategorias.GetById(id);
+            return View(categoria);
         }
 
         // GET: Categorias/Create
