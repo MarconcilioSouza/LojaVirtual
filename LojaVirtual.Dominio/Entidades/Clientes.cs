@@ -1,6 +1,5 @@
 ﻿using LojaVirtual.Dominio.Enum;
 using System;
-using System.Collections.Generic;
 
 namespace LojaVirtual.Dominio.Entidades
 {
@@ -10,20 +9,14 @@ namespace LojaVirtual.Dominio.Entidades
         {
         }
 
-        #region Propriedades
-
         public int IdCliente { get; set; }
         public string Email { get; set; }
-        public int IdPedido { get; set; }
         public DateTime DataCadastro { get; set; }
         public long Documento { get; set; }
         public string Rg { get; set; }
         public string NomeCliente { get; set; }
         public string Sobrenome { get; set; }
-        public string NomeCompleto
-        {
-            get { return NomeCliente + " " + Sobrenome; }
-        }
+        public string NomeCompleto { get { return NomeCliente + " " + Sobrenome; } }
         public Endereco Endereco { get; set; }
         public DateTime? DataNascimento { get; set; }
         public Sexo Sexo { get; set; }
@@ -40,25 +33,24 @@ namespace LojaVirtual.Dominio.Entidades
         public bool EmailsPromocionais { get; set; }
         public bool PrimeiroAcesso { get; protected set; }
         public DateTime? DataPrimeiroAcesso { get; protected set; }
-       // public EnumInfo<StatusCliente> Status { get; set; }
+        public bool Ativo { get; set; }
         public DateTime? DataUltimaCobrancaPacoteSMS { get; set; }
         public bool PessoaFisica { get; protected set; }
         public DadosBancarios DadosBancarios { get; set; }
-       // public DadosCartaoCredito DadosCartaoDeCredito { get; set; }
+        // public DadosCartaoCredito DadosCartaoDeCredito { get; set; }
         public int LimiteVeiculo { get; set; }
         public bool BloqueadoPacoteSMS { get; set; }
         public bool PacoteSms { get; set; }
-        //[DataType(DataType.Password)]
         public string SenhaUra { get; set; }
         public bool EmitirNotaFiscal { get; protected set; }
         public bool UltimaCobrancaPaga { get; protected set; }
         public DateTime DataUltimaAtualizacaoCobranca { get; protected set; }
         public string InscricaoEstadual { get; set; }
         public string InscricaoMunicipal { get; set; }
-       // public CanalVendas CanalVendas { get; set; }
+        // public CanalVendas CanalVendas { get; set; }
         public DateTime DataAlteracaoStatus { get; protected set; }
         public DateTime? DataValidacaoEmail { get; protected set; }
-       // public IList<ChaveCliente> ChaveCliente { get; protected set; }
+        // public IList<ChaveCliente> ChaveCliente { get; protected set; }
         public bool ClienteGestaoFrotas { get; set; }
         public bool TentativaCadastroDivergente { get; set; }
         //public DetalheRestricaoTransferencia Restricao { get; set; }
@@ -66,6 +58,5 @@ namespace LojaVirtual.Dominio.Entidades
         public DateTime? DataCadastroDivergente { get; set; }
         //public EnumInfo<StatusSerasa> StatusSerasa { get; set; }
         public bool PermiteEnvioSms { get; set; }
-        #endregion Propriedades
     }
 }
