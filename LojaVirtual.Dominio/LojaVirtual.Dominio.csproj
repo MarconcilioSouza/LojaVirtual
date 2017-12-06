@@ -43,9 +43,12 @@
     <Compile Include="Entidades\Categorias.cs" />
     <Compile Include="Entidades\Clientes.cs" />
     <Compile Include="Entidades\DetalhesPedido.cs" />
+    <Compile Include="Entidades\Fabricante.cs" />
     <Compile Include="Entidades\Fornecedores.cs" />
+    <Compile Include="Entidades\Item.cs" />
     <Compile Include="Entidades\Pedidos.cs" />
     <Compile Include="Entidades\Produtos.cs" />
+    <Compile Include="Entidades\ShoppingCar.cs" />
     <Compile Include="Interfaces\Repositorios\IRepositorioBase.cs" />
     <Compile Include="Interfaces\Repositorios\IRepositorioCategorias.cs" />
     <Compile Include="Interfaces\Repositorios\IRepositorioCliente.cs" />
