@@ -41,11 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\Categorias.cs" />
+    <Compile Include="Entidades\Cidade.cs" />
     <Compile Include="Entidades\Clientes.cs" />
     <Compile Include="Entidades\ConfiguracaoIntegracaoBancaria.cs" />
     <Compile Include="Entidades\DadosBancarios.cs" />
     <Compile Include="Entidades\DetalhesPedido.cs" />
     <Compile Include="Entidades\Endereco.cs" />
+    <Compile Include="Entidades\Estado.cs" />
     <Compile Include="Entidades\Fabricante.cs" />
     <Compile Include="Entidades\Fornecedores.cs" />
     <Compile Include="Entidades\InstituicaoFinanceira.cs" />

@@ -16,7 +16,7 @@ namespace LojaVirtual.Dominio.Entidades
         public string Rg { get; set; }
         public string NomeCliente { get; set; }
         public string Sobrenome { get; set; }
-        public string NomeCompleto { get { return NomeCliente + " " + Sobrenome; } }
+        public string NomeCompleto { get { return string.Concat(NomeCliente, " ", Sobrenome); } }
         public Endereco Endereco { get; set; }
         public DateTime? DataNascimento { get; set; }
         public Sexo Sexo { get; set; }
